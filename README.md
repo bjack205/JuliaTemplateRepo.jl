@@ -1,4 +1,5 @@
 ![CI](https://github.com/bjack205/JuliaTemplateRepo.jl/workflows/CI/badge.svg)
+[![codecov](https://codecov.io/gh/bjack205/JuliaTemplateRepo.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/bjack205/JuliaTemplateRepo.jl)
 [![](https://img.shields.io/badge/docs-dev-blue.svg)](https://bjack205.github.io/JuliaTemplateRepo.jl/dev)
 
 # Julia Template Repo
