@@ -1,4 +1,5 @@
 ![CI](https://github.com/bjack205/JuliaTemplateRepo.jl/workflows/CI/badge.svg)
+[![](https://img.shields.io/badge/docs-dev-blue.svg)](https://bjack205.github.io/JuliaTemplateRepo.jl/dev)
 
 # Julia Template Repo
 This repository is meant as a walk-through for setting up a new Julia package, complete with a test suite, CI, code coverage, and documentation.
