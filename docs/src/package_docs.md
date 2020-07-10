@@ -79,21 +79,3 @@ Here is some ``\\LaTeX`` for you:
 
 """
 ```
-
-## Writing Docstrings
-As stated in the [Julia manual](https://docs.julialang.org/en/v1/manual/documentation/),
-start the docstring with the signature, which is indented with 4 spaces so it prints as
-Julia code. You can use normal markdown syntax, such as headings, to make your docstrings
-look since and stay organized. See the above example and the
-[Documenter.jl docs](https://juliadocs.github.io/Documenter.jl/stable/man/latex/) on how
-to include ``\LaTeX`` math into the docstrings.
-
-
-
-## Building documentation locally
-You can build the documentation locally by only running the `makedocs` function, and
-disabling `prettyurls`. It's common to update docstrings in your code and want these
-changes reflected in your build. After making a change to the docstring, you need to
-"rebuild" the docstrings by executing the whole file, easily done with `CTRL-SHIFT-RETURN`
-in Juno. You can then rebuild the the docs (using `CTRL-RETURN` in Juno) and the docstrings
-will be updated.

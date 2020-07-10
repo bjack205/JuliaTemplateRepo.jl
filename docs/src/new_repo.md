@@ -6,12 +6,12 @@ This is a summary of the instructions in the [Julia Pkg manual](https://julialan
 Follow the Julia package [naming conventions](https://julialang.github.io/Pkg.jl/v1/creating-packages/#Package-naming-guidelines-1). All julia package repos should have ".jl" at the end.
 Do NOT initialize the repo with a README or license at this point.
 
-![New Repo](../../images/CreateRepo.png)
+![New Repo](images/CreateRepo.png)
 
 2. After creating the repo you should see a screen that looks like the one below. Copy the
 repo URL.
 
-![Blank Repo](../../images/BlankRepo.png)
+![Blank Repo](images/BlankRepo.png)
 
 3. In your terminal on your computer, launch Julia. Generate the package files using the
 package manager:

@@ -26,4 +26,4 @@ Julia and run the command from the default environment:
 ```
 which should return something similar to this:
 
-![tests](../../images/test_output.png)
+![tests](images/test_output.png)

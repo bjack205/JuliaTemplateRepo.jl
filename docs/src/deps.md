@@ -41,7 +41,7 @@ manager:
 ```
 Which should return something like
 
-![st](../../images/st_output.png)
+![st](images/st_output.png)
 
 Here we see that LinearAlgebra is a part of the standard library since it doesn't have an
 associated version, and that we're using `StaticArrays` `v0.12.4`. Since all patches should

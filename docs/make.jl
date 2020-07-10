@@ -11,7 +11,8 @@ makedocs(
             "Adding Dependencies" => "deps.md",
             "Adding Tests" => "tests.md",
             "Setting up CI" => "CI.md",
-            "Adding Code Coverage" => "codecov.md"
+            "Adding Code Coverage" => "codecov.md",
+            "Building documentation" => "docs.md"
         ],
         "Sample Documentation" => "package_docs.md"
     ]
