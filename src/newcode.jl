@@ -33,6 +33,12 @@ end
 Holds two vectors of the same length and type.
 
 The vectors can be retrieved using `v.a` and `v.b` or `v[1]` and `v[2]`.
+Supports [`vec_add!`](@ref) and [`vec_sub!`](@ref).
+
+Here is some ``\\LaTeX`` for you:
+```math
+    \\sum_{i=1}^N x_k^T Q_k x_k
+```
 
 # Constructors
     VecPair{V}(a,b)
