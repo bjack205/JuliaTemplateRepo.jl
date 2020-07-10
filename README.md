@@ -10,4 +10,4 @@ See the documentation for an for example and walk-throughs on the following topi
 * [Adding tests](https://bjack205.github.io/JuliaTemplateRepo.jl/dev/tests.html)
 * [Setting up CI](https://bjack205.github.io/JuliaTemplateRepo.jl/dev/CI.html)
 * [Setting up code coverage](https://bjack205.github.io/JuliaTemplateRepo.jl/dev/codecov.html)
-* [Building documentation]()
+* [Building documentation](https://bjack205.github.io/JuliaTemplateRepo.jl/dev/docs.html)
