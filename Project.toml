@@ -1,0 +1,4 @@
+name = "JuliaTemplateRepo"
+uuid = "bfba84be-7fa7-49e4-96a7-8b4754465918"
+authors = ["Brian Jackson <bjack205@gmail.com>"]
+version = "0.1.0"
