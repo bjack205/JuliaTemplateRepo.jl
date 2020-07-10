@@ -16,3 +16,7 @@ makedocs(
         "Sample Documentation" => "package_docs.md"
     ]
 )
+
+deploydocs(
+    repo = "github.com/bjack205/JuliaTemplateRepo.jl.git",
+)
