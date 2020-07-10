@@ -12,7 +12,8 @@ makedocs(
             "Adding Tests" => "tests.md",
             "Setting up CI" => "CI.md",
             "Adding Code Coverage" => "codecov.md",
-            "Building documentation" => "docs.md"
+            "Building documentation" => "docs.md",
+            "Registering a Package" => "registering.md"
         ],
         "Sample Documentation" => "package_docs.md"
     ]

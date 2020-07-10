@@ -52,4 +52,12 @@
         @test_throws AssertionError vec_add!(a,b)
         @test_throws AssertionError vec_sub!(a,b)
     end
+
+    # Test greet
+    f = open("out", create=true, read=true, write=true)
+    redirect_stdout(JuliaTemplateRepo.greet, f)
+    seekstart(f)
+    @test readline(f) == "Hello World!"
+    close(f)
+    rm("out")
 end

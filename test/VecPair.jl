@@ -29,6 +29,11 @@
             @test all(v.b .≈ b)
             @test vec_add!(v) === v.a
             @test all(v[1] .≈ c)
+
+            c = (a + b) - b
+            @test all(v.b .≈ b)
+            @test vec_sub!(v) === v.a
+            @test all(v[1] .≈ c)
         end
     end
 
