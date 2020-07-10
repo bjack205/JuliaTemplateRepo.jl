@@ -3,91 +3,63 @@ This section details how to set up a documentation page using [Documenter.jl](ht
 in the documentation for that package.
 
 1. In your repo, create a `docs/` directory, and a `docs/src/` directory that will conntain
-all the source `.md` files for your documentation.
+    all the source `.md` files for your documentation.
 
 2. Create a `docs/make.jl` file. This file is responsible for building and deploying your
-documentation. Here is the basic starting point:
-```julia
-using Documenter
-using JuliaTemplateRepo  # your package name here
+    documentation. Here is the basic starting point:
 
-makedocs(
-    sitename = "JuliaTemplateRepo",  # your package name here
-    format = Documenter.HTML(prettyurls = false),  # optional
-    pages = [
-        "Introduction" => "index.md"
-    ]
-)
+        using Documenter
+        using JuliaTemplateRepo  # your package name here
 
-# Documenter can also automatically deploy documentation to gh-pages.
-# See "Hosting Documentation" and deploydocs() in the Documenter manual
-# for more information.
-deploydocs(
-    repo = "github.com/bjack205/JuliaTemplateRepo.jl.git",
-)
-```
+        makedocs(
+            sitename = "JuliaTemplateRepo",  # your package name here
+            format = Documenter.HTML(prettyurls = false),  # optional
+            pages = [
+                "Introduction" => "index.md"
+            ]
+        )
+
+        # Documenter can also automatically deploy documentation to gh-pages.
+        # See "Hosting Documentation" and deploydocs() in the Documenter manual
+        # for more information.
+        deploydocs(
+            repo = "github.com/bjack205/JuliaTemplateRepo.jl.git",
+        )
 
 3. Add documentation files to `docs/src`. Once the files are in `docs/src`, add them to
-the `makedocs` command.
+    the `makedocs` command.
 
 4. Add Documentation dependencies. Nearly identical to the tests, we need to add any
-dependencies we use to build the documentation, which obviously must include Documenter.jl.
-Activate the `docs/` directory and add Documenter
-```
-julia> ] activate docs
-(docs) pkg> add Documenter
-```
+    dependencies we use to build the documentation, which obviously must include Documenter.jl.
+    Activate the `docs/` directory and add Documenter
+    ```
+    julia> ] activate docs
+    (docs) pkg> add Documenter
+    ```
     Then add a `[compat]` entry for Documenter.
 
 4. Add deploy keys for your repo. Install [DocumenterTools.jl](https://github.com/JuliaDocs/DocumenterTools.jl) and enter the following into your REPL
-```
-using DocumenterTools
-using JuliaTemplateRepo                     # your package name here
-DocumenterTools.genkeys(JuliaTemplateRepo)  # your package name here
-```
+    ```
+    using DocumenterTools
+    using JuliaTemplateRepo                     # your package name here
+    DocumenterTools.genkeys(JuliaTemplateRepo)  # your package name here
+    ```
     Copy the first public key (starts with `ssh-rsa` and ends with ` Documenter`).
     Go to your repository settings in GitHub and select "Deploy Keys". Add the deploy key,
     using `documenter` as the name.
-![deploy_key](images/deploy_key.png)
+    ![deploy_key](images/deploy_key.png)
 
     Then copy the very long environment variable and save it as the `DOCUMENTER_KEY` secret
     on GitHub:
-![doc_key](images/doc_key.png)
-
+    ![doc_key](images/doc_key.png)
 
 5. Add a GitHub Action to build your documentation. Create a new GitHub action
-(called `Documenter.yml`) and paste the following code:
-```
-name: Documentation
+    (called `Documenter.yml`) and paste the code found
+    [here](https://github.com/bjack205/JuliaTemplateRepo.jl/blob/master/.github/workflows/Documenter.yml):
 
-on:
-  push:
-    branches:
-      - master
-    tags: '*'
-  pull_request:
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: julia-actions/setup-julia@latest
-        with:
-          version: 1.3
-      - name: Install dependencies
-        run: julia --project=docs/ -e 'using Pkg; Pkg.develop(PackageSpec(path=pwd())); Pkg.instantiate()'
-      - name: Build and deploy
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # For authentication with GitHub Actions token
-          DOCUMENTER_KEY: ${{ secrets.DOCUMENTER_KEY }} # For authentication with SSH deploy key
-        run: julia --project=docs/ docs/make.jl
-```
 6. Add Documentation badge to README. Add the following line to the top of the file,
-replacing the user/organize and repo names in the url:
-```
-[![](https://img.shields.io/badge/docs-dev-blue.svg)](https://bjack205.github.io/JuliaTemplateRepo.jl/dev)
-```
+    replacing the user/organize and repo names in the url:
+    `[![](https://img.shields.io/badge/docs-dev-blue.svg)](https://bjack205.github.io/JuliaTemplateRepo.jl/dev)`
 
 ## Writing Docstrings
 As stated in the [Julia manual](https://docs.julialang.org/en/v1/manual/documentation/),
